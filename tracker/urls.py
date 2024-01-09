@@ -19,6 +19,6 @@ from django.urls import path,include
 from planes import views as planes
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', planes.index, name = 'planes'),
+    path('admin/', admin.site.urls),
 ]
