@@ -105,10 +105,10 @@ WSGI_APPLICATION = 'tracker.wsgi.application'
 #     }
 
 
+DATABASE_URL = os.getenv('DATABASE_URL')
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL")) 
+    'default': dj_database_url.config(),
 }
-
 if 'test' in sys.argv:
     DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
